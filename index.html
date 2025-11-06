@@ -76,6 +76,22 @@
             font-size: 1.5rem;
             font-weight: 700;
             color: var(--primary-color);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        /* Add logo styling */
+        .nav-brand img {
+            height: 50px;
+            width: auto;
+            object-fit: contain;
+            display: block;
+        }
+
+        .nav-brand span {
+            display: none;
         }
 
         .nav-menu {
@@ -590,15 +606,150 @@
                 height: 24px;
             }
         }
+
+        /* New Styles for "Nuestra Historia" Section */
+        .about-us {
+            background-color: var(--background-white);
+            padding: 80px 20px;
+        }
+
+        .about-us-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            margin-bottom: 6rem;
+        }
+
+        .about-us-title {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+        }
+
+        .about-us-paragraph {
+            font-size: 1.05rem;
+            color: var(--text-light);
+            line-height: 1.9;
+            margin-bottom: 1.5rem;
+            text-align: justify;
+        }
+
+        .about-us-image {
+            display: flex;
+            justify-content: center;
+        }
+
+        .about-image {
+            width: 100%;
+            max-width: 450px;
+            border-radius: 15px;
+            box-shadow: 0 15px 50px var(--shadow);
+            animation: fadeInUp 1s ease-out;
+        }
+
+        /* Values Section */
+        .values-section {
+            background: linear-gradient(135deg, var(--background-light) 0%, #E8D5DD 100%);
+            padding: 4rem;
+            border-radius: 20px;
+        }
+
+        .values-title {
+            font-size: 2rem;
+            text-align: center;
+            color: var(--primary-color);
+            margin-bottom: 3rem;
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .value-card {
+            background-color: var(--background-white);
+            padding: 2rem;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 5px 20px var(--shadow);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .value-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 35px var(--shadow);
+        }
+
+        .value-icon {
+            font-size: 2.5rem;
+            color: var(--secondary-color);
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .value-card h4 {
+            font-size: 1.3rem;
+            color: var(--primary-color);
+            margin-bottom: 0.8rem;
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+        }
+
+        .value-card p {
+            color: var(--text-light);
+            line-height: 1.7;
+            font-size: 0.95rem;
+        }
+
+        /* Responsive Design for "Nuestra Historia" Section */
+        @media (max-width: 768px) {
+            .about-us-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .about-us-title {
+                font-size: 2rem;
+            }
+
+            .values-title {
+                font-size: 1.5rem;
+            }
+
+            .values-section {
+                padding: 2rem;
+            }
+
+            .values-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .about-us-paragraph {
+                font-size: 1rem;
+                text-align: left;
+            }
+        }
     </style>
 </head>
 <body>
     <!-- Navigation -->
     <nav class="navbar">
         <div class="container">
-            <div class="nav-brand">Cafe Hogar & Vintage</div>
+            <!-- Replace text with logo image and link -->
+            <a href="#inicio" class="nav-brand">
+                <img src="images/logo.png" alt="Cafe Hogar & Vintage">
+                <span>Cafe Hogar & Vintage</span>
+            </a>
             <ul class="nav-menu" id="navMenu">
                 <li><a href="#inicio" class="nav-link">Inicio</a></li>
+                <li><a href="#nuestra-historia" class="nav-link">Nuestra Historia</a></li>
                 <li><a href="#sobre-nosotros" class="nav-link">Sobre Nosotros</a></li>
                 <li><a href="#contacto" class="nav-link">Contacto</a></li>
             </ul>
@@ -618,8 +769,52 @@
                 <div class="hero-divider"></div>
                 <p class="hero-subtitle">Colección curada de exquisitas antigüedades barrocas, desde la más fina porcelana de Baviera hasta obras maestras de plata británica</p>
                 <div class="hero-buttons">
-                    <a href="#sobre-nosotros" class="btn btn-primary">Explorar Colección</a>
+                    <a href="#nuestra-historia" class="btn btn-primary">Nuestra Historia</a>
+                    <a href="#sobre-nosotros" class="btn btn-outline">Explorar Colección</a>
                     <a href="#contacto" class="btn btn-outline">Contactar</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us / Our Story Section -->
+    <section id="nuestra-historia" class="about-us">
+        <div class="container">
+            <div class="about-us-content">
+                <div class="about-us-text">
+                    <h2 class="about-us-title">Nuestra Historia</h2>
+                    <div class="section-divider" style="margin-left: 0;"></div>
+                    <p class="about-us-paragraph">
+                        Fundada con una pasión inquebrantable por las antigüedades barrocas, Cafe Hogar & Vintage nace de la visión de preservar y compartir las joyas más exquisitas de épocas pasadas. Durante más de dos décadas, hemos viajado por los mercados antiguos y colecciones privadas de Europa para reunir piezas auténticas que cuentan historias de elegancia y refinamiento.
+                    </p>
+                    <p class="about-us-paragraph">
+                        Cada antigüedad en nuestra colección ha sido meticulosamente seleccionada no solo por su belleza, sino también por su autenticidad y valor histórico. Creemos que estos tesoros merecen encontrar un hogar donde sean valorados y apreciados por su verdadero significado artístico.
+                    </p>
+                </div>
+                <div class="about-us-image">
+                    <img src="https://images.unsplash.com/photo-1578749556568-bc2c40e68b61?w=500&h=500&fit=crop" alt="Antigüedades Barrocas" class="about-image">
+                </div>
+            </div>
+
+            <!-- Values Section -->
+            <div class="values-section">
+                <h3 class="values-title">Nuestros Valores</h3>
+                <div class="values-grid">
+                    <div class="value-card">
+                        <div class="value-icon">✦</div>
+                        <h4>Autenticidad</h4>
+                        <p>Garantizamos que cada pieza es genuina y auténtica, con certificación de procedencia cuando es posible.</p>
+                    </div>
+                    <div class="value-card">
+                        <div class="value-icon">✦</div>
+                        <h4>Calidad Excepcional</h4>
+                        <p>Solo seleccionamos piezas en excelente estado que reflejen el esplendor original de su era.</p>
+                    </div>
+                    <div class="value-card">
+                        <div class="value-icon">✦</div>
+                        <h4>Experiencia Curada</h4>
+                        <p>Cada compra incluye información detallada sobre la historia, origen y cuidado de tu antigüedad.</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -669,7 +864,12 @@
             <div class="social-links">
                 <a href="https://instagram.com" target="_blank" class="social-link" aria-label="Instagram">
                     <svg viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                        <!-- Camera body -->
+                        <circle cx="12" cy="12" r="4" fill="white" stroke="white" stroke-width="0.5"/>
+                        <!-- Camera lens -->
+                        <circle cx="12" cy="12" r="2.5" fill="currentColor"/>
+                        <!-- Flash light -->
+                        <circle cx="18.5" cy="5.5" r="0.8" fill="white"/>
                     </svg>
                 </a>
                 <a href="https://facebook.com" target="_blank" class="social-link" aria-label="Facebook">
@@ -684,7 +884,7 @@
                 </a>
                 <a href="https://twitter.com" target="_blank" class="social-link" aria-label="Twitter">
                     <svg viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                        <path d="M18.244 2.25h3.308L7.084 4.126H5.117z"/>
                     </svg>
                 </a>
             </div>
@@ -734,6 +934,7 @@
                     <h4>Enlaces</h4>
                     <ul>
                         <li><a href="#inicio">Inicio</a></li>
+                        <li><a href="#nuestra-historia">Nuestra Historia</a></li>
                         <li><a href="#sobre-nosotros">Sobre Nosotros</a></li>
                         <li><a href="#contacto">Contacto</a></li>
                     </ul>
@@ -745,7 +946,7 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2024 Cafe Hogar & Vintage. Todos los derechos reservados.</p>
+                <p>&copy; 2025 Cafe Hogar & Vintage. Todos los derechos reservados.</p>
             </div>
         </div>
     </footer>
